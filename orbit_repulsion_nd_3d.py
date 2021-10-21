@@ -123,8 +123,8 @@ step = 0.1
 last_t = 50
 time = np.arange(0, last_t, step)
 
-G = 1
-I = 3 * G
+G = 1  # attraction constant
+I = 3 * G  # repulsion constant
 dimensions = 3
 
 # extract data from bodies objects in usable form
@@ -172,7 +172,7 @@ def animate(i, ndim):
     return lines, trackers, #time_text
 
 
-ani = FuncAnimation(fig, animate, ans.shape[0], fargs=(dimensions,), interval=step * 500, blit=True)
+ani = FuncAnimation(fig, animate, ans.shape[0], fargs=(dimensions,), interval=step * 500, blit=False)
 
 ax.set_xlabel("X Position")
 ax.set_ylabel("Y Position")
